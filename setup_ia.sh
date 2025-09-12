@@ -42,6 +42,8 @@ pip install "numpy<2" --force-reinstall
 # Instalar otras dependencias esenciales
 pip install pandas tflite-runtime --prefer-binary
 
+pip install Pillow --prefer-binary
+
 # --- Paso 4: Configurar OpenCV global en el entorno virtual ---
 echo "[4/5] Configurando OpenCV para el entorno virtual..."
 
