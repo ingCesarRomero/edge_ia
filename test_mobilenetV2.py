@@ -89,7 +89,7 @@ def process_single_image(image_path, output_path, conf_threshold=0.5):
     """Procesa una sola imagen con bounding boxes"""
     
     # Cargar modelo
-    interpreter = Interpreter(model_path='detect.tflite')
+    interpreter = Interpreter(model_path='mobilenet_v2.tflite')
     interpreter.allocate_tensors()
     
     # Obtener detalles del modelo
