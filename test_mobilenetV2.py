@@ -132,7 +132,7 @@ def main():
     #test_image_path = "test_image.bmp"
     #urllib.request.urlretrieve(test_image_url, test_image_path)
     #print(f"   Imagen guardada como: {test_image_path}")
-    test_image_path = "flia.jpg"
+    test_image_path = "personacaida2.webp"
     # Paso 4: Preprocesar imagen
     print("🖼️ Preprocesando imagen...")
     input_data, original_size = preprocess_image(test_image_path, width, height)
@@ -167,4 +167,5 @@ def main():
 
 # Ejecutar el programa
 if __name__ == "__main__":
+
     main()
