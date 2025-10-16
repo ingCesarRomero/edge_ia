@@ -53,6 +53,13 @@ python -c "import pandas as pd; print('   Pandas:', pd.__version__)"
 python -c "import tflite_runtime.interpreter as tflite; print('   TensorFlow Lite: OK')"
 python -c "import cv2; print('   OpenCV:', cv2.__version__)"
 
+# Cambiar al directorio del proyecto
+cd "$RUTA_PROYECTO"
+
+# Activar el entorno virtual
+source "$ENTORNO/bin/activate"
+
+
 echo ""
 echo "🎉 ¡Entorno virtual creado exitosamente!"
 echo ""
