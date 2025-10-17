@@ -20,11 +20,11 @@ import sys
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 #Utilizamos la libreria OpenCV para leer imagen de un archivo
-image = cv2.imread('faces.jpg')
+imagen = cv2.imread('faces.jpg')
 
 #La detección por haar cascades solamente trabaja en escala de grises
 #Utilizamos la conversión de OpenCV para hacer el trabajo:
-gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+imagen_gris = cv2.cvtColor(imagen, cv2.COLOR_BGR2GRAY)
 
 #--------------------------------------------
 # AQUI SE HACE REALMENTE LA DETECCIÓN FACIAL:
@@ -37,25 +37,19 @@ gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 # yi es la coordenada y del rostro i en pxs
 # wi y hi son ancho y alto en pxs del rostro (este clasificador considera que los rostros son cuadrados es decir wi = hi para todos los rostros)
 
-faces = detector.detectMultiScale(
-    image,           # Imagen de entrada (escala de grises)
-    scaleFactor=1.1, # Factor de escala entre pirámides
-    minNeighbors=5,  # Mínimo de vecinos para confirmar detección
-    minSize=(30,30), # Tamaño mínimo del objeto
-    maxSize=None,    # Tamaño máximo del objeto  
-    flags=None       # Flags de comportamiento
-)
+rostros = detector.detectMultiScale(imagen_gris)
 
 #Imprimimos los resultados en pantalla
 print("----------------------------------------------------------------------")
-print(f"Se han detectado {len(faces)} rostros en la imagen proporcionada")
+print(f"Se han detectado {len(rostros)} rostros en la imagen proporcionada")
 print("----------------------------------------------------------------------")
 
 print("Coordenadas y dimensiones de los rostros en px:")
 
 n=1
-for (x, y, w, h) in faces:
+for (x, y, w, h) in rostros:
     print(f"Imagen {n}: X:{x}, Y:{y}, W:{w}")
     n+=1
     
     
+
