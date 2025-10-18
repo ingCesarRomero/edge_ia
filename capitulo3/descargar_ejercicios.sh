@@ -8,6 +8,7 @@ echo "📥 Descargando archivos del capítulo 3..."
 ARCHIVOS=(
     "faces.jpg"
     "detector_facial_1.py"
+    "utilidades.py"
     "haarcascade_frontalface_alt2.xml"
     "haarcascade_frontalface_default.xml"
     "haarcascade_profileface.xml"
