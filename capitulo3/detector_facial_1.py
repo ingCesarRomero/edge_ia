@@ -10,11 +10,16 @@ import cv2
 #importamos sys que es el paquete que nos permite interactuar con el sistema operativo
 import sys
 
-
+#importamos algunas funciones utilitarias que por claridad del codigo fueron agrupadas en otro archivo
+#y no tienen que ver con el proceso de detección
+from utilidades import *
+    
+    
+    
 #--------------------------------------------------------------------------------------------------
 # COMIENZO DEL PROCESAMIENTO
 #--------------------------------------------------------------------------------------------------
-#Creamos un objeto detector que utiliza el algoritmo Haar Cascade para detección de objetos
+#Creamos un objeto clasificador que utiliza el algoritmo Haar Cascade para detección de objetos
 #Argumento: haarcascade_frontalface_default.xml es el modelo pre-entrenado para rostros frontales
 
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
@@ -51,5 +56,12 @@ for (x, y, w, h) in rostros:
     print(f"Imagen {n}: X:{x}, Y:{y}, W:{w}")
     n+=1
     
+dibujar_rostros(imagen,rostros,"caras_detectadas.jpg")
+
     
+
+
+
+
+
 
